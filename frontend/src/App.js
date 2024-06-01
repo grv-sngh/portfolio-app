@@ -1,23 +1,27 @@
-// frontend/src/App.js
+import { BrowserRouter } from "react-router-dom";
 
-import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import ContactPage from './pages/ContactPage.js';
-import ProjectPage from './pages/ProjectPage';
-import SkillPage from './pages/SkillPage';
-import HomePage from './pages/HomePage.js';
+import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/projects" element={<ProjectPage />} />
-        <Route path="/skills" element={<SkillPage />} />
-      </Routes>
+      <div className='relative z-0 bg-primary'>
+        <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
+          <Navbar />
+          <Hero />
+        </div>
+        <About />
+        <Experience />
+        <Tech />
+        <Works />
+        <Feedbacks />
+        <div className='relative z-0'>
+          <Contact />
+          <StarsCanvas />
+        </div>
+      </div>
     </BrowserRouter>
   );
-};
+}
 
 export default App;
