@@ -5,11 +5,13 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ContactPage from './pages/ContactPage.js';
 import ProjectPage from './pages/ProjectPage';
 import SkillPage from './pages/SkillPage';
+import HomePage from './pages/HomePage.js';
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/projects" element={<ProjectPage />} />
         <Route path="/skills" element={<SkillPage />} />
